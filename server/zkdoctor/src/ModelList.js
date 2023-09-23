@@ -296,9 +296,9 @@ const zkDoctorContractAbi = [
 
 const models = [
     {id:1, name: 'Breast Cancer', description: 'Detect early signs of breast cancer', downloads: 312, model_path: 'model-runner-app.zip', image: 'breast.jpg', author: 'National Cancer Institute'},
-    {id:2, name: 'Diabetes', description: 'Check if you have a diabetes', downloads: 428, model_path: 'diabetes.pth', image: 'diabetes.jpg', author: 'National Institute of Diabetes and Digestive and Kidney Diseases'},
-    {id:3, name: 'Heart Disease', description: 'Analyze risks of heart disease', downloads: 10092, model_path: 'heart.pth', image: 'heart.jpg', author: 'National Heart, Lung, and Blood Institute'},
-    {id:4, name: 'Skin Cancer', description: 'Spot skin cancer (melanoma) early', downloads: 187371, model_path: 'skin.pth', image: 'skin.jpg', author: 'National Cancer Institute'},
+    {id:2, name: 'Diabetes', description: 'Check if you have a diabetes', downloads: 428, model_path: 'model-runner-app.zip', image: 'diabetes.jpg', author: 'National Institute of Diabetes and Digestive and Kidney Diseases'},
+    {id:3, name: 'Heart Disease', description: 'Analyze risks of heart disease', downloads: 10092, model_path: 'model-runner-app.zip', image: 'heart.jpg', author: 'National Heart, Lung, and Blood Institute'},
+    {id:4, name: 'Skin Cancer', description: 'Spot skin cancer (melanoma) early', downloads: 187371, model_path: 'model-runner-app.zip', image: 'skin.jpg', author: 'National Cancer Institute'},
   // add more models here
 ];
 
