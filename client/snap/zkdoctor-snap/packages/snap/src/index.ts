@@ -1,10 +1,19 @@
 import { OnTransactionHandler, OnCronjobHandler } from '@metamask/snaps-types';
 import { heading, panel, text } from '@metamask/snaps-ui';
 
+const BASE_URL = 'https://localhost:3000';
+
+async function getPolicyDetails(policyId: string) {
+  const response = await fetch(`${BASE_URL}/api/policy/${policyId}`);
+  const reputation = await response.json();
+  return reputation;
+};
+
 export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
   console.log('onTransaction', transaction);
   
-  const policy = {premium: "1", expirationDate: "2024-09-23"}
+  //const policy = {premium: "1", expirationDate: "2024-09-23"}
+  const policy = await getPolicyDetails("1");
 
   // Display percentage of gas fees in the transaction insights UI.
   return {
