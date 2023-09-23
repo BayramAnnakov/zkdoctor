@@ -1,7 +1,7 @@
 import { OnTransactionHandler, OnCronjobHandler } from '@metamask/snaps-types';
 import { heading, panel, text } from '@metamask/snaps-ui';
 
-const BASE_URL = 'https://localhost:3000';
+const BASE_URL = 'http://localhost:3001';
 
 async function getPolicyDetails(policyId: string) {
   const response = await fetch(`${BASE_URL}/api/policy/${policyId}`);
@@ -24,10 +24,10 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
         Please review the details and click "Confirm" to purchase the policy.`,
       ),
       text(
-        `Premium: ${policy.premium}ETH`,
+        `Premium: ${policy.premium / 10**18}ETH`,
       ),
       text(
-        `Expires: ${policy.expirationDate}`,
+        `Expires: ${new Date(policy.endDate * 1000).toLocaleDateString()}`,
       ),       
     ]),
   };

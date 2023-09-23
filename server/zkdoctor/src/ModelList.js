@@ -4,7 +4,7 @@ import './ModelList.css';
 
 const { ethers, BrowserProvider } = require('ethers');
 
-const verifierContractAddress = '0x970c6F6D19369433BCF6e3952Bb541ad09024092';
+const verifierContractAddress = '0xD185ef65EE2a77d9eF92A4375AaBF8B2fd859976';
 const verifierContractAbi = [
 	{
 		"inputs": [
@@ -32,7 +32,7 @@ const verifierContractAbi = [
 	}
 ];
 
-const zkDoctorContractAddress = '0xf8e81D47203A594245E36C48e151709F0C19fBe8';
+const zkDoctorContractAddress = '0xcABd2c6117E4f850aaEf145E985394223C847513';
 
 const zkDoctorContractAbi = [
 	{

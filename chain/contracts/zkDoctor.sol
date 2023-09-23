@@ -34,6 +34,7 @@ contract zkDoctor is ERC2771Context, Ownable {
         require(_insurancePolicies[id].id == 0, "Policy already exists");
         require(startDate < endDate, "Start date must be before end date");
         require(endDate > startDate, "End date must be after start date");
+        //require(_token.transferFrom(_msgSender(), address(this), premium), "Transfer failed");
         _insurancePolicies[id] = InsurancePolicy(id, amount, premium, startDate, endDate);
         emit InsurancePolicyCreated(id, amount, premium, startDate, endDate);
 
@@ -42,9 +43,9 @@ contract zkDoctor is ERC2771Context, Ownable {
 
     function claimPolicy(uint256 id) external {
         require(_insurancePolicies[id].id != 0, "Policy does not exist");
-        require(_insurancePolicies[id].startDate >= block.timestamp, "Policy is not yet active");
-        require(_insurancePolicies[id].endDate < block.timestamp, "Policy is not yet expired");
-        require(_token.transfer(_msgSender(), _insurancePolicies[id].amount), "Transfer failed");
+        require(_insurancePolicies[id].startDate < block.timestamp, "Policy start date should be in the past");
+        require(_insurancePolicies[id].endDate > block.timestamp, "Policy end date should be in the future");
+        //require(_token.transfer(_msgSender(), _insurancePolicies[id].amount), "Transfer failed");
 
         emit InsurancePolicyClaimed(id, _insurancePolicies[id].amount, block.timestamp);
     }

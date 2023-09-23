@@ -23,3 +23,5 @@ client/snap/zkdoctor-snap/.yarnrc.yml
 client/snap/zkdoctor-snap/LICENSE.APACHE2
 client/snap/zkdoctor-snap/LICENSE.MIT0
 
+server/simple-server/.env
+server/simple-server/node_modules/
