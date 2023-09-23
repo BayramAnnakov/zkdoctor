@@ -28,3 +28,25 @@
     cursor: pointer;
   }
   
+  .model-subsection {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .model-subsection h4 {
+    margin-top: 0;
+  }
+  
+  .model-subsection input {
+    display: block;
+    margin-top: 10px;
+    padding: 5px;
+  }
+
+  .verification-status {
+    margin-top: 10px;
+    font-weight: bold;
+    color: green;
+  }
