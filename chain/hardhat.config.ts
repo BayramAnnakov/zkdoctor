@@ -26,8 +26,25 @@ const config: HardhatUserConfig = {
       accounts: [process.env.WALLET_KEY as string],
       gasPrice: 1000000000,
     },
+    'zkEVM' : {
+      url: 'https://rpc.public.zkevm-test.net',
+      accounts: [process.env.WALLET_KEY as string],
+      gasPrice: 1000000000,
+    },
+    'chiado': {
+      url: "https://rpc.chiadochain.net",
+      accounts: [process.env.WALLET_KEY as string],
+      gasPrice: 1000000000,
+    },
+    'scrollSepolia': {
+      url: "https://sepolia-rpc.scroll.io/" || "",
+      accounts: [process.env.WALLET_KEY as string],
+      gasPrice: 1000000000,
+    },
   },
   defaultNetwork: 'hardhat',
 };
+
+
 
 export default config;
