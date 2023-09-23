@@ -1,0 +1,9 @@
+query PoliciesCreatedQuery {
+  insurancePolicyCreateds(first: 50) {
+    id
+    zkDoctor_id
+    amount
+    premium
+  }
+}
+

@@ -1,20 +1,4 @@
-const {config} = require("dotenv");
-config();
-
-const { Network, Alchemy, Wallet} = require('alchemy-sdk');
-const { ethers, Contract, Interface } = require('ethers');
-
-const {execute} = require('./.graphclient')
-
-const settings = {
-    network: Network.BASE_GOERLI,
-    apiKey: process.env.ALCHEMY_API_KEY,
-};
-
-const alchemy = new Alchemy(settings);
-
-
-const abi = [
+[
 	{
 		"anonymous": false,
 		"inputs": [
@@ -269,62 +253,4 @@ const abi = [
 		"stateMutability": "view",
 		"type": "function"
 	}
-];
-
-const zkDoctorInterface = new Interface(abi);
-
-const zkDoctorAddress = '0xcABd2c6117E4f850aaEf145E985394223C847513';
-
-
-var express = require('express');
-var app = express();
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
-
-app.get('/api/getAllPolicies', async (req, res) => {
-    const response = await execute(`{
-        insurancePolicyCreateds(first: 50) {
-            id
-            zkDoctor_id
-            amount
-            premium
-          }
-        }`);
-    console.log(response);
-    res.status(200).json(response);
-        
-});
-
-
-app.get('/api/policy/:id', async (req, res) => {
-    try {
-
-        const policyId = parseInt(req.params.id);
-
-        console.log('Fetching policy details for policy id:', policyId);
-        
-        const wallet = new Wallet(process.env.PRIVATE_KEY, alchemy);
-        const zkDoctorContract = new Contract(zkDoctorAddress, zkDoctorInterface, wallet);
-
-        const owner = await zkDoctorContract.owner();
-        console.log('Owner:', owner);
-
-        const policyDetails = await zkDoctorContract.getPolicyDetails(policyId);
-
-        if (policyDetails) {
-            console.log('Policy Details:', policyDetails);
-            res.status(200).json({ premium: Number(policyDetails.premium), endDate: Number(policyDetails.endDate) });
-        } else {
-            console.error('No policy details returned');
-            res.status(404).json({ error: 'No policy details returned' });
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json({ error: 'Could not fetch policy details' });
-      }
-});
-
-app.listen(3001, function () {
-  console.log('Example app listening on port 3001!');
-});
+]

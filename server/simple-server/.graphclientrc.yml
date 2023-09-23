@@ -1,0 +1,8 @@
+sources:
+  - name: zkDoctor
+    handler:
+      graphql:
+        endpoint: https://api.studio.thegraph.com/query/39401/zkdoctor/version/latest
+
+documents:
+  - ./policies.graphql
