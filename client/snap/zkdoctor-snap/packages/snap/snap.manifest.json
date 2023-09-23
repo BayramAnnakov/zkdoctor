@@ -1,0 +1,42 @@
+{
+  "version": "0.1.0",
+  "description": "Snap for zkDoctor",
+  "proposedName": "zkDoctor Snap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/template-snap-monorepo.git"
+  },
+  "source": {
+    "shasum": "ZRWH4iL/lBQzKNJb7BeMO8xV8irbj2AXoEDvBcreuzQ=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "iconPath": "images/icon.svg",
+        "packageName": "snap",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_dialog": {},
+    "snap_notify": {},
+    "endowment:transaction-insight": {},
+    "endowment:ethereum-provider": {},
+    "endowment:rpc": {
+      "dapps": true,
+      "snaps": false
+    },
+    "endowment:network-access": {},
+    "endowment:cronjob": {
+      "jobs": [
+        {
+          "expression": "* * * * *",
+          "request": {
+            "method": "updateInsurancePolicy"
+          }
+        }
+      ]
+    }
+  },
+  "manifestVersion": "0.1"
+}
