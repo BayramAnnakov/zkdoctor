@@ -4,6 +4,7 @@ import { heading, panel, text } from '@metamask/snaps-ui';
 export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
   console.log('onTransaction', transaction);
   
+  const policy = {premium: "1", expirationDate: "2024-09-23"}
 
   // Display percentage of gas fees in the transaction insights UI.
   return {
@@ -13,6 +14,12 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
         `Below are details of the insurance policy you are purchasing. 
         Please review the details and click "Confirm" to purchase the policy.`,
       ),
+      text(
+        `Premium: ${policy.premium}ETH`,
+      ),
+      text(
+        `Expires: ${policy.expirationDate}`,
+      ),       
     ]),
   };
 };
