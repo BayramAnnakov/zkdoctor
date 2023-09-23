@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Diagnostics Model Runner</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+
+    <h1>Select Image and Run Model</h1>
+    <input type="file" id="image-selector" name="image" accept=".jpg, .jpeg, .png">
+    <div class="image-section">
+        <img id="selected-image" src="" />
+    </div>
+    <button id="generate-button">Run Model</button>
+    <div class="output-section">
+        <h2>Model Output</h2>
+        <p id="output"></p>
+      </div>
+
+      <div class="proof-section">
+        <h2>Proof</h2>
+        <p id="proof"></p>
+      </div>
+    
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>

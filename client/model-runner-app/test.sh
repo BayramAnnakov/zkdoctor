@@ -1,0 +1,1 @@
+echo "Triggered from ElectronJS App"

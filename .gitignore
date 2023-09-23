@@ -1,3 +1,7 @@
 
 server/zkdoctor/package-lock.json
 .DS_Store
+client/model-runner-app/node_modules/
+client/model-runner-app/out/
+client/model-runner-app/package-lock.json
+server/zkdoctor/public/model-runner-app.zip

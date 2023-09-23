@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .image-section img {
+    max-width: 100%;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+  }
+  
+  .output-section, .proof-section {
+    margin-top: 20px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .output-section h2, .proof-section h2 {
+    margin-top: 0;
+  }
+
+  .output-section p, .proof-section p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap; /* Preserves whitespace and new lines */
+    font-family: "Courier New", monospace;
+  }
+  
+  .proof-section p {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
