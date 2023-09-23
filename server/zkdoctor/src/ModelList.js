@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './ModelList.css';
+
 
 
 const models = [
@@ -13,32 +15,40 @@ const models = [
 function ModelList() {
   return (
     <div className="model-list">
-        <h2>Available Diagnostic Models</h2>
-        <table>
-        <thead>
-            <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Author</th>
-            <th>Description</th>
-            <th>Downloads</th>
-            <th>Download</th>
-            </tr>
-        </thead>
+      <h2>Available Diagnostic Models</h2>
+      <table>
         <tbody>
-            {models.map((model, index) => (
-            <tr key={index}>
-                <td><img src={model.image} alt={model.name} /></td>
-                <td>{model.name}</td>
-                <td>{model.author}</td>
-                <td>{model.description}</td>
-                <td>{model.downloads}</td>
-                <td><button>Download</button></td>
-            </tr>
+          <tr>
+            {models.slice(0, 2).map((model, index) => (
+              <td key={index} className="model-cell">
+                <div className="model-info">
+                  <img src={model.image} alt={model.name} />
+                  <h3>{model.name}</h3>
+                  <p><strong>Author:</strong> {model.author}</p>
+                  <p><strong>Description:</strong> {model.description}</p>
+                  <p><strong>Downloads:</strong> {model.downloads}</p>
+                  <button>Download</button>
+                </div>
+              </td>
             ))}
+          </tr>
+          <tr>
+            {models.slice(2, 4).map((model, index) => (
+              <td key={index} className="model-cell">
+                <div className="model-info">
+                  <img src={model.image} alt={model.name} />
+                  <h3>{model.name}</h3>
+                  <p><strong>Author:</strong> {model.author}</p>
+                  <p><strong>Description:</strong> {model.description}</p>
+                  <p><strong>Downloads:</strong> {model.downloads}</p>
+                  <button>Download</button>
+                </div>
+              </td>
+            ))}
+          </tr>
         </tbody>
-        </table>
-  </div>
+      </table>
+    </div>
   );
 }
 
