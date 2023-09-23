@@ -29,7 +29,7 @@ body {
     padding: 5px;
   }
   
-  .output-section, .proof-section {
+  .model-log-section, .output-section, .proof-section {
     margin-top: 20px;
     background-color: #f1f1f1;
     padding: 10px;
@@ -40,11 +40,16 @@ body {
     margin-top: 0;
   }
 
-  .output-section p, .proof-section p {
+  .model-log-section p, .output-section p, .proof-section p {
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: pre-wrap; /* Preserves whitespace and new lines */
     font-family: "Courier New", monospace;
+  }
+
+  .model-log-section p {
+    max-height: 150px;
+    overflow-y: auto;
   }
   
   .proof-section p {
