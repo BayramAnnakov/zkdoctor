@@ -25,3 +25,4 @@ client/snap/zkdoctor-snap/LICENSE.MIT0
 
 server/simple-server/.env
 server/simple-server/node_modules/
+server/graph/zkdoctor/

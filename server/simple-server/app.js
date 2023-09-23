@@ -4,7 +4,7 @@ config();
 const { Network, Alchemy, Wallet} = require('alchemy-sdk');
 const { ethers, Contract, Interface } = require('ethers');
 
-const {execute} = require('./.graphclient')
+const {execute, PoliciesCreatedQueryDocument} = require('./.graphclient')
 
 const settings = {
     network: Network.BASE_GOERLI,
@@ -283,16 +283,9 @@ app.get('/', function (req, res) {
 });
 
 app.get('/api/getAllPolicies', async (req, res) => {
-    const response = await execute(`{
-        insurancePolicyCreateds(first: 50) {
-            id
-            zkDoctor_id
-            amount
-            premium
-          }
-        }`);
-    console.log(response);
-    res.status(200).json(response);
+    const response = await execute(PoliciesCreatedQueryDocument);
+
+    res.status(200).json(response.data.insurancePolicyCreateds);
         
 });
 
