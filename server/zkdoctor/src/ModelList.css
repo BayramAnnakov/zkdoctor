@@ -51,3 +51,7 @@
     font-weight: bold;
     color: green;
   }
+
+  .verification-status-failed {
+    color: red;
+  }

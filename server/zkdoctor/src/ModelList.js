@@ -4,7 +4,7 @@ import './ModelList.css';
 
 const { ethers, BrowserProvider } = require('ethers');
 
-const contractAddress = '0x606F30b87D64A06db842dd69059d0741F7727637';
+const contractAddress = '0x970c6F6D19369433BCF6e3952Bb541ad09024092';
 const abi = [
 	{
 		"inputs": [
@@ -130,7 +130,7 @@ function ModelList() {
                       <input type="text" placeholder="Proof" value={proof} onChange={(e) => setProof(e.target.value)} />
                       <button onClick={handleSubmit}>Submit</button>
                       <button onClick={handleCloseSubsection}>Cancel</button>
-                      {verificationStatus && <div className="verification-status">{verificationStatus}</div>}
+                      {verificationStatus && <div className={verificationStatus !== 'Proof Verified' ? 'verification-status-failed' : 'verification-status'}>{verificationStatus}</div>}
                     </div>
                   )}
                 </div>
@@ -160,7 +160,7 @@ function ModelList() {
                       <input type="text" placeholder="Proof" value={proof} onChange={(e) => setProof(e.target.value)} />
                       <button onClick={handleSubmit}>Submit</button>
                       <button onClick={handleCloseSubsection}>Cancel</button>
-                      {verificationStatus && <div className="verification-status">{verificationStatus}</div>}
+                      {verificationStatus && <div className={verificationStatus !== 'Proof Verified' ? 'verification-status-failed' : 'verification-status'}>{verificationStatus}</div>}
                     </div>
                   )}
                 </div>
