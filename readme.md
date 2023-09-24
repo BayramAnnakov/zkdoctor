@@ -1,0 +1,8 @@
+zkDoctor is revolutionizing the healthcare and insurance landscape by integrating cutting-edge technologies like blockchain and machine learning to prioritize user privacy and provide personalized services.
+
+1. Health Diagnostics Models Website: Our platform offers an extensive list of health diagnostic models tailored to meet a wide range of medical needs. Users can assess their health status in real-time and then seamlessly purchase an insurance policy that matches their health profile.
+2. Client-Side Model Runner: With zkDoctor, you don't have to worry about exposing sensitive medical data. Our client-side model runner allows users to get their diagnostics and generate zero-knowledge proofs. This means your data stays on your device and is never exposed, ensuring complete privacy.
+3. Blockchain-Powered Smart Contracts: We leverage Ethereum smart contracts for on-chain proof verification and tracing of insurance policies. Once a zero-knowledge proof is verified on-chain, the user can proceed to purchase an insurance policy, knowing that their private health information remains confidential.
+4. MetaMask Snap Integration: Our custom MetaMask snap offers insurance policy transaction insights. We've also implemented a recurring cron job that keeps you updated on the status of your policy, reminding you when it's time to renew.
+
+By bringing together blockchain's transparency and the privacy features of zero-knowledge proofs, zkDoctor is setting new standards in the healthcare industry, making it safer, more private, and more efficient.
