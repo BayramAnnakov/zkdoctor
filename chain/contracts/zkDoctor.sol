@@ -34,7 +34,7 @@ contract zkDoctor is ERC2771Context, Ownable {
         require(_insurancePolicies[id].id == 0, "Policy already exists");
         require(startDate < endDate, "Start date must be before end date");
         require(endDate > startDate, "End date must be after start date");
-        //require(_token.transferFrom(_msgSender(), address(this), premium), "Transfer failed");
+        require(_token.transferFrom(_msgSender(), address(this), premium), "Transfer failed");
         _insurancePolicies[id] = InsurancePolicy(id, amount, premium, startDate, endDate);
         emit InsurancePolicyCreated(id, amount, premium, startDate, endDate);
 
